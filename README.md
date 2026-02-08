@@ -55,19 +55,19 @@ run.bat
 Access the app at: `http://127.0.0.1:5000`
 
 ### 4. Verify Security
-Run the automated security test suite to validate all defenses:
+Run the automated security test suite to validate all funds:
 ```bash
 python verify_security.py
 ```
 *Sample Output:*
 ```
 [PASSED] ALL SECURITY CHECKS PASSED!
-Attributes Verified:
- - Password Hashing: ACTIVE
- - Input Sanitization (XSS): ACTIVE
- - Secure Headers: ACTIVE
 ...
 ```
+
+### 5. Manual Testing (Must Read) 🧪
+For a step-by-step guide on how to manually test the security features (like XSS and SQL Injection) yourself, please read:
+👉 **[MANUAL_TESTING.md](MANUAL_TESTING.md)**
 
 ---
 
