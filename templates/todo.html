@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>My Secure Todos</h2>
+
+<!-- Add Todo Form -->
+<form method="POST" action="{{ url_for('todos') }}" class="todo-form"
+    style="margin-bottom: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 2rem;">
+    <div class="form-group">
+        <label for="title">Task Title</label>
+        <input type="text" id="title" name="title" required placeholder="What needs to be done?">
+    </div>
+    <div class="form-group">
+        <label for="description">Description (Optional)</label>
+        <input type="text" id="description" name="description" placeholder="Details...">
+    </div>
+    <button type="submit">Add Todo</button>
+</form>
+
+<!-- Todo List -->
+{% if todos %}
+<ul class="todo-list">
+    {% for todo in todos %}
+    <li class="todo-item">
+        <div>
+            <span class="todo-title {{ 'completed' if todo.completed }}">
+                {{ todo.title }}
+            </span>
+            {% if todo.description %}
+            <br>
+            <small class="todo-desc">{{ todo.description }}</small>
+            {% endif %}
+        </div>
+        <div>
+            {% if todo.completed %}
+            <a href="{{ url_for('update_todo', todo_id=todo.id) }}" class="btn-action btn-undo">Undo</a>
+            {% else %}
+            <a href="{{ url_for('update_todo', todo_id=todo.id) }}" class="btn-action btn-done">Done</a>
+            {% endif %}
+
+            <a href="{{ url_for('delete_todo', todo_id=todo.id) }}" class="btn-action btn-delete">Delete</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p style="text-align: center; color: #666;">No todos yet. Add one above!</p>
+{% endif %}
+
+{% endblock %}
