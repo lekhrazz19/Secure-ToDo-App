@@ -17,7 +17,7 @@ Unlike standard todo apps, this project focuses heavily on **Application Securit
     *   **Anti-SQL Injection**: Utilization of `Flask-SQLAlchemy` ORM to prevent malicious queries.
     *   **Anti-XSS**: Jinja2 auto-escaping + input length validation to neutralize script injections.
 *   **Session Management**: Secure session cookies (`HttpOnly`, `SameSite=Lax`) to prevent session hijacking.
-*   **Access Control**: strict authorization checks ensure users can only CRUD (Create, Read, Update, Delete) their own data.
+*   **Access Control**: Strict authorization checks ensure users can only CRUD (Create, Read, Update, Delete) their own data.
 *   **Security Headers**: Implemented `X-Frame-Options`, `X-Content-Type-Options`, and `Referrer-Policy` to harden browser security.
 
 ---
@@ -55,7 +55,7 @@ run.bat
 Access the app at: `http://127.0.0.1:5000`
 
 ### 4. Verify Security
-Run the automated security test suite to validate all funds:
+Run the automated security test suite to validate all defenses:
 ```bash
 python verify_security.py
 ```

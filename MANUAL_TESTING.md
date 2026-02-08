@@ -47,7 +47,7 @@ Follow these steps exactly. If something doesn't work, check the "Troubleshootin
     <script>alert('Hacked')</script>
     ```
 2.  **Result**:
-    *   **Secure Behavior**: The text `<script>alert('Hacked')</script>` appears on the screen as normal text. nothing happens.
+    *   **Secure Behavior**: The text `<script>alert('Hacked')</script>` appears on the screen as normal text. Nothing happens.
     *   **Vulnerable Behavior (Fail)**: A popup box says "Hacked".
     *   *Note: If you just see the text, YOU PASSED.*
 
